@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">MyStoryApp</string>
+    <string name="Register">Register</string>
+    <string name="Login">Login</string>
+    <string name="access_account">Access Account</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="name">Name</string>
+    <string name="let_s_create_account_first">Let\'s Create account first</string>
+    <string name="create_account">Create Account</string>
+    <string name="already_have_an_account">Already have an account ?</string>
+    <string name="confirm_password">Confirm Password</string>
+
+    <string name="empty_massage">There\'s Nothing Here</string>
+    <string name="at_least_for_now">at least for now</string>
+    <string name="emote_empty">emote_empty</string>
+    <string name="image_stories">Image Stories</string>
+    <string name="list_stories">List of Stories</string>
+    <string name="created_at">Created at</string>
+    <string name="description">Description</string>
+    <string name="btnlogout">btnLogout</string>
+    <string name="addnewstories">addNewStories</string>
+    <string name="previewimage">previewImage</string>
+    <string name="btnback">btnBack</string>
+    <string name="add_new_stories">Add New Stories</string>
+    <string name="camera">Camera</string>
+    <string name="galery">Galery</string>
+    <string name="upload">Upload</string>
+    <string name="captureimage">CaptureImage</string>
+    <string name="buttonswitch">ButtonSwitch</string>
+    <string name="detail_story">Detail Story</string>
+    <string name="btnmaps">btnMaps</string>
+    <string name="timeout">Timeout</string>
+    <string name="try_again">Try Again</string>
+
+</resources>
