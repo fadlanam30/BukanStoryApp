@@ -2,7 +2,6 @@ package com.example.mystoryapp.ui.addstory
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.example.mystoryapp.LoginResult
 import com.example.mystoryapp.StoryResponse
 import com.example.mystoryapp.data.StoryRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -15,5 +14,5 @@ class AddStoryViewModel @Inject constructor(private val storyRepository: StoryRe
 
     val isLoading: LiveData<Boolean> = storyRepository.isLoading
 
-    fun uploadStory(token: String, imageMultipart: MultipartBody.Part, description: String) = storyRepository.uploadStory(token, imageMultipart, description)
+    fun uploadStory(token: String, imageMultipart: MultipartBody.Part, description: String, lat: Double?, lon: Double?) = storyRepository.uploadStory(token, imageMultipart, description, lat, lon)
 }

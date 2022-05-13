@@ -73,9 +73,9 @@ class StoryRepository @Inject constructor(
         })
     }
 
-    fun uploadStory(token: String, imageMultipart: MultipartBody.Part, description: String) {
+    fun uploadStory(token: String, imageMultipart: MultipartBody.Part, description: String, lat: Double?, lon: Double?) {
         _isLoading.value = true
-        val client = apiService.addStory(token, imageMultipart, description)
+        val client = apiService.addStory(token, imageMultipart, description, lat, lon)
         client.enqueue(object : Callback<StoryResponse>{
             override fun onResponse(call: Call<StoryResponse>, response: Response<StoryResponse>) {
                 _isLoading.value = false

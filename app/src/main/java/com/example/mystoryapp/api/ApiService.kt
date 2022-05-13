@@ -50,6 +50,8 @@ interface ApiService {
         authHeader: String,
         @Part file: MultipartBody.Part,
         @Part("description") description: String,
+        @Part("lat") lat: Double?,
+        @Part("lon") lon: Double?,
     ): Call<StoryResponse>
 
 }

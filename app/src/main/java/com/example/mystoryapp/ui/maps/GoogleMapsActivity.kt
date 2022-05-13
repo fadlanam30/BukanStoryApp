@@ -57,7 +57,11 @@ class GoogleMapsActivity : AppCompatActivity(), OnMapReadyCallback {
         }
 
     private fun getMyLocation() {
-        if (ContextCompat.checkSelfPermission(this.applicationContext, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(
+                this.applicationContext,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) == PackageManager.PERMISSION_GRANTED
+        ) {
             mGMap.isMyLocationEnabled = true
         } else {
             requestPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
@@ -73,7 +77,7 @@ class GoogleMapsActivity : AppCompatActivity(), OnMapReadyCallback {
                     }
                     is Result.Success -> {
                         val data = result.data
-                        for (i in data){
+                        for (i in data) {
                             val locationStory = LatLng(i.lat, i.lon)
                             mGMap.addMarker(
                                 MarkerOptions()

@@ -36,15 +36,7 @@ class HomeActivity : AppCompatActivity() {
 
         listStoryAdapter = ListStoryAdapter()
 
-        binding?.rvStory?.adapter = listStoryAdapter.withLoadStateFooter(
-            footer = LoadingStateAdapter {
-                listStoryAdapter.retry()
-            }
-        )
 
-        homeViewModel.getStory().observe(this) {
-            listStoryAdapter.submitData(lifecycle, it)
-        }
 
         setupListData()
         showUserList()
@@ -59,22 +51,16 @@ class HomeActivity : AppCompatActivity() {
 
     }
 
-    private fun setupListData() {
-//        mainViewModel.listStory.observe(this) { listStory ->
-//            if (listStory.isEmpty()) {
-//                binding?.layoutEmpty?.visibility = View.VISIBLE
-//            }
-//            setupStoryData(listStory)
-//        }
+    private fun setupListData() {binding?.rvStory?.adapter = listStoryAdapter.withLoadStateFooter(
+        footer = LoadingStateAdapter {
+            listStoryAdapter.retry()
+        }
+    )
 
-//        mainViewModel.isLoading.observe(this) {
-//            showLoading(it)
-//        }
+        homeViewModel.getStory().observe(this) {
+            listStoryAdapter.submitData(lifecycle, it)
+        }
     }
-
-//    private fun setupStoryData(item: List<ListStoryItem>) {
-//        listStoryAdapter.setListStory(item)
-//    }
 
     private fun showUserList() {
         binding?.apply {
@@ -110,6 +96,7 @@ class HomeActivity : AppCompatActivity() {
             } else {
                 startActivity(Intent(this, MainActivity::class.java))
                 finish()
+                Toast.makeText(this, "You have been logout.", Toast.LENGTH_SHORT).show()
             }
         }
 

@@ -57,10 +57,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupViewModel() {
-//        prefViewModel = ViewModelProvider(
-//            this,
-//            ViewModelFactory(AccountPreferences.getInstance(dataStore))
-//        )[PrefViewModel::class.java]
         prefViewModel.getInfo().observe(this) { story ->
             if (story.isLogin) {
                 startActivity(Intent(this, HomeActivity::class.java))

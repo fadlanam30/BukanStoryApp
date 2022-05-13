@@ -58,14 +58,18 @@ class RegisterActivity : AppCompatActivity() {
                     }
                     else -> {
                         registerViewModel.regisAccount(name, email, password)
-                        AlertDialog.Builder(this@RegisterActivity).apply {
-                            setTitle("Yeah!")
-                            setMessage("Your Account has been created.")
-                            setPositiveButton("Next") { _, _ ->
-                                finish()
+                        registerViewModel.storyResponse.observe(this@RegisterActivity) {
+                            if (!it.error) {
+                                AlertDialog.Builder(this@RegisterActivity).apply {
+                                    setTitle("Yeah!")
+                                    setMessage("Your Account has been created.")
+                                    setPositiveButton("Next") { _, _ ->
+                                        finish()
+                                    }
+                                    create()
+                                    show()
+                                }
                             }
-                            create()
-                            show()
                         }
                     }
                 }
